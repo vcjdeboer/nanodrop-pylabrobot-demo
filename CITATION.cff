@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "NanoDrop 1000 via PyLabRobot — a working demo"
+abstract: >-
+  Driving a legacy Thermo Scientific NanoDrop ND-1000 spectrophotometer entirely
+  through PyLabRobot on macOS, with a real UV absorbance spectrum of paracetamol,
+  raw data, plots, and two hardware-verified macOS driver fixes.
+authors:
+  - family-names: "de Boer"
+    given-names: "Vincent"
+    affiliation: "Wageningen University & Research"
+  - family-names: "van Leeuwen"
+    given-names: "Jord"
+    affiliation: "Wageningen University & Research"
+  - family-names: "Saggiomo"
+    given-names: "Vittorio"
+    affiliation: "Wageningen University & Research"
+version: "1.0.0"
+doi: "10.5281/zenodo.22695032"
+date-released: "2026-09-10"
+url: "https://github.com/vcjdeboer/nanodrop-pylabrobot-demo"
+repository-code: "https://github.com/vcjdeboer/nanodrop-pylabrobot-demo"
+keywords:
+  - NanoDrop ND-1000
+  - PyLabRobot
+  - UV-Vis spectrophotometry
+  - laboratory automation
+  - open science
