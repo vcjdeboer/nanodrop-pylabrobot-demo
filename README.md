@@ -5,13 +5,12 @@ entirely through **[PyLabRobot](https://github.com/PyLabRobot/pylabrobot)** on
 macOS, and measuring a real **UV absorbance spectrum of paracetamol**
 (acetaminophen / Tylenol).
 
-This repo documents one measurement session end-to-end: raw detector counts →
-averaged blank → absorbance → noise reduction by scan-averaging and curve
-smoothing. Every plot below is real data measured on a physical instrument, not
-a simulation.
+This repo documents one measurement session end-to-end: the blank reference →
+absorbance → noise reduction by scan-averaging and curve smoothing. Every plot
+below is real data measured on a physical instrument, not a simulation.
 
 <p align="center">
-  <img src="plots/05_final_paracetamol_sg.png" width="720"><br>
+  <img src="plots/04_final_paracetamol_sg.png" width="720"><br>
   <em>Paracetamol, measured live through PyLabRobot: 10× averaged + Savitzky–Golay smoothing. λmax ≈ 243 nm.</em>
 </p>
 
@@ -48,41 +47,38 @@ array; useful range roughly 230–750 nm, limited by the xenon lamp).
 
 ## Results
 
-### 1. Raw detector counts (single scan)
+### 1. The blank (reference)
 
-![raw counts](plots/01_raw_counts.png)
+![blank](plots/01_blank_10x_averaged.png)
 
-A single, unaveraged acquisition. The **green** trace is the blank — light from
-the xenon lamp passing through transparent water — so it shows the **lamp's own
-emission profile** (brightest in the blue-green, ~484 nm), *not* water's
-spectrum. The **grey** trace is the dark frame (~292 counts), the detector's
-baseline with the lamp off. Note how noisy a single scan is, especially where
-counts are low.
+Every absorbance measurement is divided against a blank. The **green** trace is
+the blank — light from the xenon lamp passing through transparent water — so it
+shows the **lamp's own emission profile** (brightest in the blue-green, ~484 nm),
+*not* water's spectrum. The **grey** trace is the dark frame (~292 counts), the
+detector baseline with the lamp off.
 
-### 2. 10×-averaged blank & dark
+This blank is **10 scans averaged**, acquired within a single pedestal-down /
+lamp-on cycle (the way the vendor software works). Worth noting: a raw blank is
+already smooth — it's high-signal (hundreds to ~2700 counts), where relative
+noise is small — so **averaging barely changes how the blank curve *looks***.
+The payoff of averaging is not visible here; it shows up in the **absorbance**,
+where you divide small, noisy numbers (next section).
 
-![10x blank](plots/02_blank_10x_averaged.png)
+### 2. Absorbance — single scan vs 10× averaged
 
-The same dark and blank, but **10 scans averaged** (within a single
-pedestal-down / lamp-on cycle, the way the vendor software works). Random noise
-falls as ≈ 1/√N, so the traces are visibly smoother. **This averaged blank is
-the reference that every sample measurement is divided against.**
-
-### 3. Absorbance — single scan vs 10× averaged
-
-![1x vs 10x](plots/03_absorbance_1x_vs_10x.png)
+![1x vs 10x](plots/02_absorbance_1x_vs_10x.png)
 
 The paracetamol absorbance spectrum, **single scan (grey)** vs **10× averaged
-(purple)**. The strong UV band (paracetamol's λmax ≈ 243 nm) is clearly
-resolved; the visible region is flat because paracetamol is colourless.
-Averaging cleans the mid-band and baseline substantially. The residual jitter at
-the far-UV edge (< 235 nm) is a **hardware limit** — the lamp emits almost no
-light there, so those pixels are photon-starved and no amount of averaging fully
-rescues them.
+(purple)** — and *here* the averaging clearly matters. The strong UV band
+(paracetamol's λmax ≈ 243 nm) is resolved; the visible region is flat because
+paracetamol is colourless. Averaging cleans the mid-band and baseline
+substantially. The residual jitter at the far-UV edge (< 235 nm) is a **hardware
+limit** — the lamp emits almost no light there, so those pixels are
+photon-starved and no amount of averaging fully rescues them.
 
-### 4. Curve smoothing — boxcar vs Savitzky–Golay
+### 3. Curve smoothing — boxcar vs Savitzky–Golay
 
-![smoothing](plots/04_smoothing_boxcar_vs_sg.png)
+![smoothing](plots/03_smoothing_boxcar_vs_sg.png)
 
 Two smoothing filters applied to the 10×-averaged spectrum, windows expressed in
 **nm** (the physically meaningful unit; the filter functions take a window in
