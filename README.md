@@ -142,3 +142,7 @@ Archived on Zenodo — **DOI: [10.5281/zenodo.22695032](https://doi.org/10.5281/
 An open-science project from Wageningen (Jord, Vittorio, Vincent). Analysis,
 plots, and the macOS fixes in this repo were produced with Claude Code assisting
 at the bench.
+
+## License
+
+[MIT](LICENSE) © 2026 Vincent de Boer, Jord van Leeuwen, and Vittorio Saggiomo.

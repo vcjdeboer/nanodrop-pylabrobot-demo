@@ -16,6 +16,7 @@ authors:
     given-names: "Vittorio"
     affiliation: "Wageningen University & Research"
 version: "1.0.0"
+license: MIT
 doi: "10.5281/zenodo.22695032"
 date-released: "2026-09-10"
 url: "https://github.com/vcjdeboer/nanodrop-pylabrobot-demo"
