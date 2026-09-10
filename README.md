@@ -143,6 +143,10 @@ An open-science project from Wageningen (Jord, Vittorio, Vincent). Analysis,
 plots, and the macOS fixes in this repo were produced with Claude Code assisting
 at the bench.
 
+## Funding
+
+This work was supported by the **WUR Open Science & Education programme** (grant no. **OSE202534**).
+
 ## License
 
 [MIT](LICENSE) © 2026 Vincent de Boer, Jord van Leeuwen, and Vittorio Saggiomo.
