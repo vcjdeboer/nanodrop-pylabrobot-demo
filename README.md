@@ -1,5 +1,7 @@
 # NanoDrop 1000 via PyLabRobot — a working demo
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22695032.svg)](https://doi.org/10.5281/zenodo.22695032)
+
 Driving a legacy **Thermo Scientific NanoDrop ND-1000** spectrophotometer
 entirely through **[PyLabRobot](https://github.com/PyLabRobot/pylabrobot)** on
 macOS, and measuring a real **UV absorbance spectrum of paracetamol**
@@ -118,6 +120,16 @@ hardware-verified here:
   **USB reset at teardown** (as Jord's original driver did) clears it reliably.
 
 Both fixes: **[vcjdeboer/pylabrobot @ nanodrop-macos-fixes](https://github.com/vcjdeboer/pylabrobot/tree/nanodrop-macos-fixes)**
+
+---
+
+## Cite this
+
+Archived on Zenodo — **DOI: [10.5281/zenodo.22695032](https://doi.org/10.5281/zenodo.22695032)**
+
+> de Boer, V. (2026). *NanoDrop 1000 via PyLabRobot — a working demo* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.22695032
+
+*(The Zenodo record's authors default to the repo owner. To add Jord and Vittorio as co-authors, edit the upload's metadata on Zenodo.)*
 
 ---
 
